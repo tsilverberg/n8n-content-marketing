@@ -1,0 +1,647 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "62953dc2-3791-41c6-9657-0d78cd15e8c1",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApi",
+      "typeVersion": 1,
+      "position": [
+        192,
+        0
+      ],
+      "id": "f200bd2d-423f-482f-8e00-7a5965207473",
+      "name": "Google_news search",
+      "credentials": {
+        "serpApi": {
+          "id": "xeQH9gwFmjG27ea1",
+          "name": "SerpApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are my crypto analyst and researcher, crawl {{ $json.news_results[1].link }} and extract the most compelling news summarize them in a single article for your blog called \"Crypto This Week\" \n- Just reply directly the final text with no preface message and not suggestions at the end\n- Write an intro about the sentiment of the week\n- Write a conclusion\n- Generate 3-5 sections with title and description about the news and a mention if its bullish or bearish.\n- You a super skilled in WIX Blog settings\nOutput\nHere's a sample of the output:\n{\n    \"draftPost\": {\n        \"title\": \"Crypto This Week: Institutional Volume Surge Signals Renewed Bitcoin Interest\",\n        \"memberId\": \"388fd8f3-e185-458c-8a15-e8ae236d0273\",\n        \"richContent\": {\n            \"nodes\": [\n                {\n                    \"type\": \"IMAGE\",\n                    \"id\": \"\",\n                    \"imageData\": {\n                        \"containerData\": {\n                            \"width\": {\n                                \"size\": \"CONTENT\"\n                            },\n                            \"alignment\": \"CENTER\",\n                            \"textWrap\": true\n                        },\n                        \"image\": {\n                            \"src\": {\n                                \"id\": \"16f8d7_db4dc593627d4111aac23c9afc3eb19c~mv2.png\"\n                            },\n                            \"width\": 704,\n                            \"height\": 433\n                        }\n                    }\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t1\",\n                            \"textData\": {\n                                \"text\": \"This week in crypto markets, the sentiment shifts notably toward bullish optimism driven by increased institutional activity in Bitcoin trading. The growing volume of institutional trades signals renewed confidence in Bitcoin’s potential, while new on-chain indicators offer fresh insights into market dynamics. However, challenges remain as volatility persists, reminding investors to navigate carefully.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"spacer1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"tsp1\",\n                            \"textData\": {\n                                \"text\": \"\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"HEADING\",\n                    \"id\": \"h1\",\n                    \"headingData\": {\n                        \"level\": 2\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t2\",\n                            \"textData\": {\n                                \"text\": \"1. Institutional Bitcoin Volume Hits 75% on Coinbase\",\n                                \"decorations\": [\n                                    {\n                                        \"type\": \"BOLD\"\n                                    },\n                                    {\n                                        \"type\": \"COLOR\",\n                                        \"colorData\": {\n                                            \"foreground\": \"#159B8B\"\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p2\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t3\",\n                            \"textData\": {\n                                \"text\": \"Data from Coinbase reveals a significant increase in institutional volume, with 75% of Bitcoin trades on the platform now attributed to institutional investors. This surge marks a major shift in market participation, highlighting increased demand from hedge funds, asset managers, and other large players. The rise in institutional trading volume is widely viewed as a bullish indicator, suggesting stronger support for Bitcoin’s price and enhanced market maturity.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"spacer1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"tsp1\",\n                            \"textData\": {\n                                \"text\": \"\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"HEADING\",\n                    \"id\": \"h4\",\n                    \"headingData\": {\n                        \"level\": 2\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t9\",\n                            \"textData\": {\n                                \"text\": \"Our Take\",\n                                \"decorations\": [\n                                    {\n                                        \"type\": \"BOLD\"\n                                    },\n                                    {\n                                        \"type\": \"COLOR\",\n                                        \"colorData\": {\n                                            \"foreground\": \"#159B8B\"\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p5\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t8\",\n                            \"textData\": {\n                                \"text\": \"This week’s developments highlight a crypto market in transition, with significant institutional engagement providing a foundation for optimism. The evolving trading patterns and new analytical tools introduce fresh perspectives on Bitcoin price dynamics. While volatility and broader economic factors warrant caution, the dominant sentiment leans bullish as professional investors reaffirm their interest in the leading cryptocurrency.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}\n\n\nOutput instructions:\n- Add the IMAGE entry in rich content, as you have in the example, in node[0]\n- Work on the \"richContent\" field to create multiple content blocks.\n- make all article titles an H2, Bold with color #159B8B, follow the example.\n- First paragraph doesn have an empty line before, it has an empty line after it, like the example.\n- After a paragraph always add a line before the next H2, follow the example.\n- give a space between the articles, follow the example.\n- The conclusion should be a separate h2 with title \"Our Take\"\n- Under message, add a parameter called \"newsLetterSummary\" with an html based exact same content. Do not apply any style, when using single quote, use the character \"'\"."
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        384,
+        0
+      ],
+      "id": "8b2aa634-43fd-43d2-80d9-7f7e677d2dd2",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "XuDJW73eiH5xLMhx",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "=Your are a designer experience in crypto trading\nYou use vibrant colors and neon\nYou are creative and futuristic, beyond the moon you are taking your art to mars and it has neon purple theme\nBased on the headline {{ $json.message.content.draftPost.title }} generate an art, it can be abstract but it should consider the sentiment, ifts bullish, bearish.\nThe image aspect ration 1200 / 800\nDon't write any headline in the image\nRename the file to upload.png",
+        "options": {
+          "returnImageUrls": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        768,
+        -112
+      ],
+      "id": "3100a97e-358a-45fa-a5d2-9d959f8cef21",
+      "name": "Generate an image",
+      "credentials": {
+        "openAiApi": {
+          "id": "XuDJW73eiH5xLMhx",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// This code assumes your binary data is in the 'data' property\n$input.item.binary.data.fileName = 'upload.png'; // Change to your desired filename\n$input.item.json.fileName = \"upload.png\"\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        -176
+      ],
+      "id": "b5418428-25a0-4e63-9103-4c04b6c3f9ad",
+      "name": "Code",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.wixapis.com/site-media/v1/files/generate-upload-url",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "wix-site-id",
+              "value": "e97c77be-9bec-44da-8288-d8455ec2ce19"
+            },
+            {
+              "name": "wix-account-id",
+              "value": "f49a9728-ac72-4968-a254-aa05e901e439"
+            },
+            {}
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n    \"mimeType\": \"image/png\",\n    \"fileType\": \"image\",\n    \"fileExtension\": \"png\",\n    \"fileName\": \"upload.png\",\n    \"fileSize\": \"1.9 MB\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1184,
+        -256
+      ],
+      "id": "8bd66e28-615a-4fd9-8330-b202a1690d70",
+      "name": "HTTP Request (Gen URL)",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qrLxgClR75VxzY7W",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "={{ $json.uploadUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "=upload.png"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "wix-site-id",
+              "value": "e97c77be-9bec-44da-8288-d8455ec2ce19"
+            },
+            {
+              "name": "wix-account-id",
+              "value": "f49a9728-ac72-4968-a254-aa05e901e439"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1632,
+        -112
+      ],
+      "id": "8f0fa00e-8d22-4d53-93aa-80c69cc640e5",
+      "name": "HTTP Request (Upload)",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qrLxgClR75VxzY7W",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1392,
+        -192
+      ],
+      "id": "9983da0c-dfda-450a-97c3-0fcf02ac682d",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sendgrid.com/v3/marketing/singlesends",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "sendGridApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"Newsletter {{ new Date().toISOString() }}\",\n  \"status\": \"scheduled\",\n  \"email_config\": {\n    \"subject\": \"{{ $json.message.content.subject }}\",\n    \"html_content\": {{ JSON.stringify($json.message.content.html_email) }},\n    \"plain_content\": \"\",\n    \"generate_plain_content\": true,\n    \"editor\": \"code\",\n    \"suppression_group_id\": 16800,\n    \"sender_id\": 1482504,\n    \"ip_pool\": null\n  },\n  \"send_to\": {\n    \"list_ids\": [\n      \"657ab664-a607-41f6-be54-04cb4f2170a7\"\n    ]\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2416,
+        208
+      ],
+      "id": "10e7d010-fe92-48b1-8428-c2bc168bd933",
+      "name": "SendGrid",
+      "credentials": {
+        "sendGridApi": {
+          "id": "qKqjbstiQrdwSmcx",
+          "name": "SendGrid account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are my editor and email marketing expert.\n- Add the pre-made email text into field \"html_email\" using the template\n- Add field \"subject\": {{ $json.message.content.draftPost.title }}.\n- Create a pre-header field, fill it with the key take away for email.\nHere's the email text:\n{{ $json.message.content.draftPost.newsLetterSummary }}\n\nAnd here's the templete you should refer:\n\"<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\" />\n    <title>Anny Trade Risk Manager</title>\n    <style>\n      body {\n        background-color: #2d2441;\n        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;\n        color: #ffffff;\n        margin: 0;\n        padding: 0;\n      }\n      .container {\n        max-width: 600px;\n        margin: auto;\n        background-color: #2d2441;\n      }\n      .header img {\n        width: 100%;\n        max-width: 100%;\n        height: auto;\n        display: block;\n        border: 0;\n      }\n      .content {\n        padding: 30px 20px;\n      }\n      h1 {\n        color: #b767de;\n        font-size: 24px;\n        margin-bottom: 20px;\n      }\n      h2 {\n        color: #02dfa8;\n        font-size: 18px;\n        margin-top: 30px;\n      }\n      p, li {\n        font-size: 14px;\n        line-height: 1.6;\n      }\n      ul {\n        padding-left: 20px;\n        margin-top: 10px;\n        margin-bottom: 20px;\n      }\n    </style>\n  </head>\n  <body>\n    <div class=\"container\">\n      <div class=\"header\">\n        <img src=\"https://cdn.mcauto-images-production.sendgrid.net/512a2767e9a78a0b/a30aaf25-d0c0-480b-811a-d2d5c2f3a494/1920x839.png\" alt=\"Anny Trade Risk Manager\" />\n      </div>\n      <div class=\"content\">\n        <h1>Dear trader</h1>\n\n        <p>\n          We’re excited to introduce a major upgrade to the Anny toolbox:\n          <strong>Risk Manager</strong> — your new assistant for smart, controlled trading.\n        </p>\n\n        <h2>⚠️ What is the Risk Manager?</h2>\n        <p>\n          It’s a built-in feature designed to <strong>protect your capital</strong> and make sure your portfolio is aligned with your risk appetite — even when markets get volatile.\n        </p>\n\n        <h2>💡 Key Features</h2>\n        <ul>\n          <li><strong>Dynamic Stop-Loss Control:</strong> Tailor exit rules that react to price, volatility, or time.</li>\n          <li><strong>Capital Exposure Limits:</strong> Avoid overleveraging with per-trade and portfolio-wide constraints.</li>\n          <li><strong>Signal Filtering:</strong> Block signals that don’t meet your personal risk thresholds.</li>\n          <li><strong>Cross-Protection:</strong> Automatically prevent overexposure to correlated assets.</li>\n        </ul>\n\n        <h2>🚀 Why It Matters</h2>\n        <p>\n          The best strategy in the world means nothing if it lacks risk control. Anny's Risk Manager puts you in the driver’s seat — keeping strategies accountable and protecting your downside.\n        </p>\n\n        <h2>📈 Use It Like a Pro</h2>\n        <ul>\n          <li>Pair it with your favorite signal groups.</li>\n          <li>Test configurations in backtest mode.</li>\n          <li>Fine-tune risk caps across strategies and assets.</li>\n        </ul>\n\n        <p>\n          Ready to trade smarter, not riskier? The Risk Manager is now available to all active traders on Anny.\n        </p>\n\n        <p>— The Anny Trade Team</p>\n      </div>\n    </div>\n  </body>\n</html>\n\"\n- Replace the image in the template for this one: {{ $json.message.content.draftPost.richContent.nodes[0].imageData.image.src.id }}\nThank you!"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2096,
+        208
+      ],
+      "id": "61b66838-b40b-413d-a610-e4a8803672ba",
+      "name": "Newsletter",
+      "credentials": {
+        "openAiApi": {
+          "id": "XuDJW73eiH5xLMhx",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Você é tradutor PT-BR especializado em cripto/mercados financeiros.\nRETORNE APENAS JSON VÁLIDO no formato: {\"draftPost\": <objeto>}\nENTRADA:\n{{ $json.message.content.draftPost.newsLetterSummary }}\nSAÍDA use o template:\n{\n    \"draftPost\": {\n        \"title\": \"Crypto This Week: Institutional Volume Surge Signals Renewed Bitcoin Interest\",\n        \"memberId\": \"388fd8f3-e185-458c-8a15-e8ae236d0273\",\n        \"richContent\": {\n            \"nodes\": [\n                {\n                    \"type\": \"IMAGE\",\n                    \"id\": \"\",\n                    \"imageData\": {\n                        \"containerData\": {\n                            \"width\": {\n                                \"size\": \"CONTENT\"\n                            },\n                            \"alignment\": \"CENTER\",\n                            \"textWrap\": true\n                        },\n                        \"image\": {\n                            \"src\": {\n                                \"id\": \"16f8d7_db4dc593627d4111aac23c9afc3eb19c~mv2.png\"\n                            },\n                            \"width\": 704,\n                            \"height\": 433\n                        }\n                    }\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t1\",\n                            \"textData\": {\n                                \"text\": \"This week in crypto markets, the sentiment shifts notably toward bullish optimism driven by increased institutional activity in Bitcoin trading. The growing volume of institutional trades signals renewed confidence in Bitcoin’s potential, while new on-chain indicators offer fresh insights into market dynamics. However, challenges remain as volatility persists, reminding investors to navigate carefully.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"spacer1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"tsp1\",\n                            \"textData\": {\n                                \"text\": \"\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"HEADING\",\n                    \"id\": \"h1\",\n                    \"headingData\": {\n                        \"level\": 2\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t2\",\n                            \"textData\": {\n                                \"text\": \"1. Institutional Bitcoin Volume Hits 75% on Coinbase\",\n                                \"decorations\": [\n                                    {\n                                        \"type\": \"BOLD\"\n                                    },\n                                    {\n                                        \"type\": \"COLOR\",\n                                        \"colorData\": {\n                                            \"foreground\": \"#159B8B\"\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p2\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t3\",\n                            \"textData\": {\n                                \"text\": \"Data from Coinbase reveals a significant increase in institutional volume, with 75% of Bitcoin trades on the platform now attributed to institutional investors. This surge marks a major shift in market participation, highlighting increased demand from hedge funds, asset managers, and other large players. The rise in institutional trading volume is widely viewed as a bullish indicator, suggesting stronger support for Bitcoin’s price and enhanced market maturity.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"spacer1\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"tsp1\",\n                            \"textData\": {\n                                \"text\": \"\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"HEADING\",\n                    \"id\": \"h4\",\n                    \"headingData\": {\n                        \"level\": 2\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t9\",\n                            \"textData\": {\n                                \"text\": \"Our Take\",\n                                \"decorations\": [\n                                    {\n                                        \"type\": \"BOLD\"\n                                    },\n                                    {\n                                        \"type\": \"COLOR\",\n                                        \"colorData\": {\n                                            \"foreground\": \"#159B8B\"\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"PARAGRAPH\",\n                    \"id\": \"p5\",\n                    \"paragraphData\": {\n                        \"style\": {\n                            \"lineSpacing\": 2.0,\n                            \"fontSize\": 16\n                        }\n                    },\n                    \"nodes\": [\n                        {\n                            \"type\": \"TEXT\",\n                            \"id\": \"t8\",\n                            \"textData\": {\n                                \"text\": \"This week’s developments highlight a crypto market in transition, with significant institutional engagement providing a foundation for optimism. The evolving trading patterns and new analytical tools introduce fresh perspectives on Bitcoin price dynamics. While volatility and broader economic factors warrant caution, the dominant sentiment leans bullish as professional investors reaffirm their interest in the leading cryptocurrency.\",\n                                \"decorations\": []\n                            }\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}\n\nExatamente a mesma estrutura de {{ $json.index }}\nREGRAS:\n- Copie exatamente a estrutura de `draftPost` da entrada (mesmas chaves, ordem, arrays, ids, tipos).\n- NÃO altere: ids, slugs, números, datas, URLs, mediaId, enums/type, booleans.\n- Traduza SOMENTE:\n  - draftPost.title.text\n  - todos os nodes do tipo TEXT -> textData.text\n  - \"newsLetterSummary\" (se existir)\n  - \"altText\" (se existir)\n  - Type: HEADING the nós text dentro\n- Não resuma; preserve todos os detalhes.\n- Sem markdown, sem comentários; apenas JSON.",
+              "role": "system"
+            }
+          ]
+        },
+        "simplify": false,
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1504,
+        336
+      ],
+      "id": "82d518db-00f2-4e93-9c60-e788c192987f",
+      "name": "Portuguese translation",
+      "credentials": {
+        "openAiApi": {
+          "id": "XuDJW73eiH5xLMhx",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1824,
+        320
+      ],
+      "id": "430be468-d5ef-4ad2-9aea-9213b5a4cfd7",
+      "name": "MergePT"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1824,
+        -16
+      ],
+      "id": "d5c20d69-d121-4dc7-9c6a-91be2701bf54",
+      "name": "MergeEN"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1) Get the LLM object\nlet llm = $input.last().json;\n\nconsole.log('llm', llm)\n\nllm.message.content.draftPost.richContent.nodes[0].imageData.image.src.id = $input.first().json.file.url;\n\nreturn $input.last()\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2032,
+        -16
+      ],
+      "id": "a30f14a7-6f1e-461a-99f8-15dd51ed0ac6",
+      "name": "MergeImageEN"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1) Get the LLM object\nlet llm = $input.last().json;\n\nconsole.log('llm', llm)\n\nllm.choices[0].message.content.draftPost.richContent.nodes[0].imageData.image.src.id = $input.first().json.file.url;\n\nreturn $input.last()\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2048,
+        464
+      ],
+      "id": "79071480-a8e7-4bb1-b871-9e1b59d24109",
+      "name": "MergeImagePT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.wixapis.com/blog/v3/draft-posts/",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "wix-site-id",
+              "value": "e97c77be-9bec-44da-8288-d8455ec2ce19"
+            },
+            {
+              "name": "wix-account-id",
+              "value": "f49a9728-ac72-4968-a254-aa05e901e439"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "draftPost",
+              "value": "={{ $json.message.content.draftPost }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2240,
+        -16
+      ],
+      "id": "839b6e76-50f9-409a-aaf8-f704b4cd1e12",
+      "name": "WIX Post EN",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qrLxgClR75VxzY7W",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.wixapis.com/blog/v3/draft-posts/",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "wix-site-id",
+              "value": "e97c77be-9bec-44da-8288-d8455ec2ce19"
+            },
+            {
+              "name": "wix-account-id",
+              "value": "f49a9728-ac72-4968-a254-aa05e901e439"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "draftPost",
+              "value": "={{ $json.choices[0].message.content.draftPost }}"
+            },
+            {
+              "name": "language",
+              "value": "pt"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2208,
+        464
+      ],
+      "id": "1b7c044c-b469-49ce-849d-00e71ee1f018",
+      "name": "WIX Post PT",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qrLxgClR75VxzY7W",
+          "name": "Header Auth account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google_news search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google_news search": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "MergeEN",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Portuguese translation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (Gen URL)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Request (Gen URL)": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (Upload)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (Upload)": {
+      "main": [
+        [
+          {
+            "node": "MergeEN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "MergePT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Newsletter": {
+      "main": [
+        [
+          {
+            "node": "SendGrid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Portuguese translation": {
+      "main": [
+        [
+          {
+            "node": "MergePT",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "MergePT": {
+      "main": [
+        [
+          {
+            "node": "MergeImagePT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MergeEN": {
+      "main": [
+        [
+          {
+            "node": "MergeImageEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MergeImageEN": {
+      "main": [
+        [
+          {
+            "node": "Newsletter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WIX Post EN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MergeImagePT": {
+      "main": [
+        [
+          {
+            "node": "WIX Post PT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WIX Post EN": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "63dde53e-be72-4e4a-8873-b02924e27457",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bed721462e12caddb4cdf785aefc0fa3000191c22b34841e05583f4af848ec1c"
+  },
+  "id": "Sfh8ofVfMVv2UKJY",
+  "tags": []
+}
